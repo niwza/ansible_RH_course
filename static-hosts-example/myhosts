@@ -1,0 +1,9 @@
+[databases]
+host2
+
+[other]
+host1
+192.168.35.10
+
+#[other:vars]
+#log_folders=/opt/logs
