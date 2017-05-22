@@ -1,0 +1,12 @@
+---
+- hosts: databases
+  tasks:
+    - name:
+      file:
+        state: touch
+        path: /home/ansible/hostname.conf
+    - name: addd hostname to config
+      lineinfile:
+        state: present
+        dest: /home/ansible/hostname.conf
+        line: Hostname={{ ansible_hostname }}

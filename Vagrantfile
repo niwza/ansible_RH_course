@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  (1..2).each do |i|
+  (1..3).each do |i|
     config.vm.define "host-#{i}" do |node|
       node.vm.box = "centos/7"
       node.vm.network "private_network", ip: "192.168.35.2#{i}"

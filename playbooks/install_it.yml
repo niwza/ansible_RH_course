@@ -1,0 +1,9 @@
+---
+- hosts: databases
+  become: true
+  tasks:
+    - name: if os is centos install apache
+      yum:
+        name: httpd
+        state: latest
+      when: ansible_os_family == "RedHat"

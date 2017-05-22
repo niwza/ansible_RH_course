@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+    - name: copy ansible hosts file
+      copy:
+        src: /etc/ansible/hosts
+        dest: /home/ansible/hosts
+        mode: 0644
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: latest
+    - name: Install several packages
+      yum:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - httpd
+        - php
+        - php-mysql
+        - elinks
