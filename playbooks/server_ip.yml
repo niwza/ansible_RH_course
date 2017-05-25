@@ -1,0 +1,4 @@
+---
+- hosts: all
+  tasks:
+    - debug: msg="The server {{ ansible_hostname }} IP is {{ ansible_default_ipv4.address }}"

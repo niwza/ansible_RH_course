@@ -1,0 +1,4 @@
+---
+- hosts: databases
+  tasks:
+    - debug: msg="The server Date is {{ ansible_date_time.date }} Time is {{ ansible_date_time.hour }}:{{ ansible_date_time.minute }}"
